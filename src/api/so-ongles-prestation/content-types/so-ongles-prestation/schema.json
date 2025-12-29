@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "so_ongles_prestations",
+  "info": {
+    "singularName": "so-ongles-prestation",
+    "pluralName": "so-ongles-prestations",
+    "displayName": "So.Ongles - Prestations",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "libelle": {
+      "type": "string"
+    },
+    "prix": {
+      "type": "decimal"
+    },
+    "prix_par_main": {
+      "type": "boolean"
+    },
+    "prix_par_doigt": {
+      "type": "boolean"
+    },
+    "prix_par_pied": {
+      "type": "boolean"
+    },
+    "etudiant": {
+      "type": "decimal"
+    },
+    "so_ongles_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::so-ongles-categorie.so-ongles-categorie",
+      "inversedBy": "so_ongles_prestations"
+    }
+  }
+}
