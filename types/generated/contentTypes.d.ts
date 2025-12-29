@@ -467,6 +467,42 @@ export interface ApiSoOnglesCategorieSoOnglesCategorie
   };
 }
 
+export interface ApiSoOnglesCmSoOnglesCm extends Struct.SingleTypeSchema {
+  collectionName: 'so_ongles_cms';
+  info: {
+    description: '';
+    displayName: 'So.Ongles - CMS';
+    pluralName: 'so-ongles-cms';
+    singularName: 'so-ongles-cm';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    adresse: Schema.Attribute.String;
+    avis_1: Schema.Attribute.Text;
+    avis_2: Schema.Attribute.Text;
+    avis_3: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    facebook: Schema.Attribute.String;
+    instagram: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::so-ongles-cm.so-ongles-cm'
+    > &
+      Schema.Attribute.Private;
+    phone: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    welcome_msg: Schema.Attribute.Text;
+  };
+}
+
 export interface ApiSoOnglesPrestationSoOnglesPrestation
   extends Struct.CollectionTypeSchema {
   collectionName: 'so_ongles_prestations';
@@ -1017,6 +1053,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::so-ongles-categorie.so-ongles-categorie': ApiSoOnglesCategorieSoOnglesCategorie;
+      'api::so-ongles-cm.so-ongles-cm': ApiSoOnglesCmSoOnglesCm;
       'api::so-ongles-prestation.so-ongles-prestation': ApiSoOnglesPrestationSoOnglesPrestation;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

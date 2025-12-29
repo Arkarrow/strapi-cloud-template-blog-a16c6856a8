@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "so_ongles_cms",
+  "info": {
+    "singularName": "so-ongles-cm",
+    "pluralName": "so-ongles-cms",
+    "displayName": "So.Ongles - CMS",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "avis_1": {
+      "type": "text"
+    },
+    "avis_2": {
+      "type": "text"
+    },
+    "avis_3": {
+      "type": "text"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "adresse": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "welcome_msg": {
+      "type": "text"
+    }
+  }
+}
